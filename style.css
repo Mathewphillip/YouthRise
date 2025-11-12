@@ -1430,14 +1430,7 @@ section{
     gap: 10px;
 }
 
-.form-options label {
-    font-weight: var(--font-regular);
-    color: var(--secondary-option);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-}
+
 
 .contact-form .btn {
     padding: 12px 30px;
@@ -1447,7 +1440,13 @@ section{
     cursor: pointer;
     font-size: var(--fontsize-one);
     font-weight: var(--font-bold);
+    transition: var(--transition-one);
+    border-radius: 5px  ;
     align-self: flex-start; 
+}
+.contact-form .btn:hover{
+    background-color: var(--color-accent);
+    transform: scale(1.02);
 }
 
 /* Other Contact Sections */
@@ -1478,7 +1477,6 @@ section{
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    height: 200px;
     display: flex;
     flex-direction: column;
     transition: var(--transition-one);
@@ -1947,7 +1945,7 @@ section{
     }
 
     .contact-options, .faq-section, .map, .newsletter-signup {
-        padding: 40px 5%;
+        padding: 40px 15px;
     }
 
     /* Footer */
@@ -1966,6 +1964,10 @@ section{
         width: 100%;
         text-align: center;
     }
+    .contact-form .btn{
+        align-self: center;
+    }
+
 
     /* Forms */
     .contact-form input,
@@ -2006,4 +2008,3 @@ section{
         width: 100%;
     }
 }
-
