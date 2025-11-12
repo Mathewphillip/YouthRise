@@ -692,7 +692,7 @@ section{
 
 .program-image {
     height: 200px;
-    background: url('images/image1.jpeg') no-repeat center center/cover;
+    overflow: hidden;
 }
 
 .program h3 {
@@ -1047,6 +1047,10 @@ section{
     padding: 30px;
     border-radius: 10px;
     transition: var(--transition-one);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .option:hover {
@@ -1120,13 +1124,12 @@ section{
 
 .gallery-image {
     height: 200px;
-    background: url('images/image1.jpeg') no-repeat center center/cover; /* Placeholder image */
-    /* You might want to add specific images for each gallery item in HTML or via CSS classes */
+    overflow: hidden;
+    display: flex;
+    place-content: center;
+    align-items: center;;
 }
 
-/* Example for specific gallery images (if you want to add them later) */
-/* .gallery-item:nth-child(1) .gallery-image { background-image: url('images/agritech.jpeg'); } */
-/* .gallery-item:nth-child(2) .gallery-image { background-image: url('images/art.jpeg'); } */
 
 .gallery-item h3 {
     font-size: 1.4rem;
@@ -1279,7 +1282,11 @@ section{
     background: #fff;
     padding: 30px;
     border-radius: 10px;
+    height: 200px;
     transition: var(--transition-one);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .cta-option:hover {
@@ -1289,11 +1296,9 @@ section{
 
 .cta-option h3 {
     color: var(--color-accent);
-    margin-bottom: 15px;
 }
 
 .cta-option .btn {
-    margin-top: 25px;
     background-color: var(--primary-color);
     color: var(--color-background);
     padding: 10px 25px;
@@ -1441,7 +1446,7 @@ section{
     cursor: pointer;
     font-size: var(--fontsize-one);
     font-weight: var(--font-bold);
-    align-self: flex-start; /* Align button to the left */
+    align-self: flex-start; 
 }
 
 /* Other Contact Sections */
@@ -1472,6 +1477,9 @@ section{
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
     transition: var(--transition-one);
 }
 
@@ -1521,7 +1529,11 @@ section{
     gap: 8px;
     margin-bottom: 10px;
 }
-
+.newsletter-signup{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 .newsletter-form {
     display: flex;
     justify-content: center;
@@ -1553,10 +1565,6 @@ section{
     }
 }
 
-/* ==================
-   TABLET STYLES (768px - 992px)
-   ================== */
-
 @media screen and (max-width: 768px) {
     /* Header adjustments */
     header {
@@ -1573,13 +1581,48 @@ section{
         padding: 60px 20px;
     }
 
-    .hero-heading, .about-hero h2, .programs-hero h2, .jobs-hero h2, .gallery-hero h2, .contact-hero h2 {
+ .about-hero h2, .programs-hero h2, .jobs-hero h2, .gallery-hero h2, .contact-hero h2 {
         font-size: var(--font-huge);
     }
 
     .hero-heading, .about-hero p, .programs-hero p, .jobs-hero p, .gallery-hero p, .contact-hero p {
         width: 90%;
         max-width: 90%;
+    }
+
+
+    h2 {
+        font-size: clamp(1.4rem, 3.8vw, 2rem);
+        line-height: 1.15;
+    }
+    h3 {
+        font-size: clamp(1.1rem, 3.2vw, 1.6rem);
+        line-height: 1.2;
+    }
+    h4, h5, h6 {
+        font-size: clamp(0.95rem, 2.8vw, 1.25rem);
+        line-height: 1.25;
+    }
+
+    .hero-heading {
+        font-size: clamp(3.5rem, 6vw, 2.2rem);
+    }
+
+    .about-hero h2,
+    .programs-hero h2,
+    .jobs-hero h2,
+    .gallery-hero h2,
+    .contact-hero h2 {
+        font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .stat h3 {
+        font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .feature h3, .feature h4 {
+        font-size: clamp(1rem, 3.5vw, 1.2rem);
     }
 
     /* Hero bottom section */
@@ -1722,15 +1765,6 @@ section{
         gap: 30px;
     }
 
-    /* General typography adjustments */
-    h1, h2, h3, h4, h5, h6 {
-        font-size: calc(var(--font-extra) * 0.6);
-    }
-
-    .hero-heading {
-        font-size: calc(var(--font-extra) * 0.8);
-    }
-
     /* Button adjustments */
     .btn {
         padding: 12px 20px;
@@ -1746,15 +1780,10 @@ section{
     }
 }
 
-/* ==================
-   MOBILE STYLES (< 576px)
-   ================== */
-
 @media screen and (max-width: 576px) {
     /* Header */
     header {
         padding-inline: 15px;
-        height: 60px;
     }
 
     .logo h1 {
@@ -1772,13 +1801,55 @@ section{
         padding: 40px 15px;
     }
 
-    .hero-heading, .about-hero h2, .programs-hero h2, .jobs-hero h2, .gallery-hero h2, .contact-hero h2 {
+   .about-hero h2, .programs-hero h2, .jobs-hero h2, .gallery-hero h2, .contact-hero h2 {
         font-size: var(--font-large);
     }
 
-    .hero-heading, .about-hero p, .programs-hero p, .jobs-hero p, .gallery-hero p, .contact-hero p {
+   .about-hero p, .programs-hero p, .jobs-hero p, .gallery-hero p, .contact-hero p {
         width: 100%;
         max-width: 100%;
+    }
+
+
+    h2 {
+        font-size: clamp(1.2rem, 5.2vw, 1.6rem);
+        line-height: 1.1;
+    }
+
+    h3 {
+        font-size: clamp(1rem, 4.2vw, 1.3rem);
+        line-height: 1.15;
+    }
+
+    h4, h5, h6 {
+        font-size: clamp(0.9rem, 3.8vw, 1rem);
+        line-height: 1.2;
+    }
+
+    .hero-heading {
+        font-size: clamp(3rem, 7vw, 1.9rem);
+        line-height: 1.08;
+    }
+
+    .about-hero h2,
+    .programs-hero h2,
+    .jobs-hero h2,
+    .gallery-hero h2,
+    .contact-hero h2 {
+        font-size: clamp(1.3rem, 6vw, 1.75rem);
+    }
+
+    .stat {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .stat h3 {
+        font-size: clamp(1.2rem, 5.5vw, 1.5rem);
+    }
+
+    .feature h3, .feature h4 {
+        font-size: clamp(0.95rem, 4vw, 1rem);
     }
 
     /* Hero bottom */
@@ -1796,15 +1867,6 @@ section{
     }
 
     .impact-evaluation-container h2 {
-        font-size: var(--font-large);
-    }
-
-    .stat {
-        padding: 15px;
-        width: 100%;
-    }
-
-    .stat h3 {
         font-size: var(--font-large);
     }
 
@@ -1894,15 +1956,6 @@ section{
 
     .footer-column h4 {
         font-size: var(--font-large);
-    }
-
-    /* Typography */
-    h1, h2, h3, h4, h5, h6 {
-        font-size: calc(var(--font-extra) * 0.7);
-    }
-
-    .hero-heading {
-        font-size: calc(var(--font-extra) * 0.7);
     }
 
     /* Buttons */
